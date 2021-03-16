@@ -6,11 +6,13 @@
     <title>Bug Finder | Home</title>
     <link rel="stylesheet" href="./style.css"/>
     <script src="js/main.js" type="module"></script>
-    <template>
-      <div class="projectCard">
-        <h3>Project: </h3>
-        <p>Summary: </p>
-      </div>
+    <template id="projectCardTemplate">
+      <a href="/projectPage.html?project=" class="projectLink">
+        <div class="projectCard">
+          <h3 class="projectName">Project: </h3>
+        </div>
+      </a>
+      <br>
     </template>
   </head>
   <body>
@@ -23,8 +25,10 @@
           products. By doing so the quality of the products will increase and so will
          the community's satisfaction while using them.</p>
       </div>
-      <div class="projectList">
+      <div class="projects">
         <h2>Community Projects</h2>
+        <ul class="projectList">
+        </ul>
       </div>
     </main>
   <footer id="main-footer"></footer>

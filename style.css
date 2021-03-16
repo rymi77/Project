@@ -66,28 +66,14 @@ body{
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropBtn {background-color: rgb(94, 94, 94);}
 
-/* The sign in button */
-.signInBtn{
-    position: absolute;
-    right: 2vw;
-    margin-top: 2vw;
-    background-color: gray;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-}
-
-.signInBtn a{
-    color: white;
-    text-decoration: none;
-}
-
 /* The title */
 .title{
     color: white;
     font-size: xx-large;
     text-align: center;
 }
+
+/* login container */
 .container{
     margin-top: 20vw;
     max-width: 30%;
@@ -120,29 +106,66 @@ h2{
 }
 
 .desc p{
-    font-size: 2vw;
     text-align: center;
 }
 
+/* project cards */
 .projectCard{
     background: lightgrey;
-    padding-left: 2vw;
-    padding-right: 2vw;
-    border-radius: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 2vw;
     border-style: ridge;
     border-color: gray;
-    border-width: .75vw;
+    border-width: 7px;
+}
+.projectCard h3{
+    margin-top: 10px;
+    margin-bottom: 0px;
+    padding-bottom: 10px;
+}
+.projectLink{
+    color: black;
+    text-decoration: none;
 }
 
-.projectCard h3{
-    margin-top: 1vw;
+/* bug tickets */
+.bugCard{
+    background: lightgrey;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 2vw;
+    border-style: ridge;
+    border-color: gray;
+    border-width: 7.5px;
+    text-align: right;
+}
+.bugCard h3{
+    margin-top: 10px;
     margin-bottom: 0px;
     padding-bottom: 0px;
+    text-align: left;
 }
-.projectCard p{
-    font-size: 1.5vw;
+.bugCard h4{
+    margin-top: 0px;
+    padding-top: 0px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    text-align: left;
+}
+.bugCard p{
     text-align: left;
     margin-top: 0px;
     padding-top: 0px;
+    margin-bottom: 0px;
+}
+.resolveBtn{
     margin-bottom: 1vw;
+    width: 100px;
+    height: 30px;
+}
+
+/* half screen */
+p{
+    font-size: 1.5vw;
 }
