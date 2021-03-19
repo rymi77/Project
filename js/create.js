@@ -3,4 +3,4 @@ import Login from "./login.js";
 
 loadHeaderFooter();
 const myLogin = new Login();
-myLogin.showLogin();
+myLogin.showCreate();
