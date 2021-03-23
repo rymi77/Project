@@ -38,7 +38,7 @@ class ExteralServices{
       headers: {
         Authorization: 'Bearer ' + getLocalStorage("token")
      }
-    }).then(convertToJson);
+    }).then(convertToJson).then((data) => data.tickets);
   }
 
   async loginRequest(user){

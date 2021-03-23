@@ -11,7 +11,7 @@ export default class TicketList {
   async init() {
     const list = await this.dataSource.getTickets();
     console.log(list);
-    //this.renderList(list);
+    this.renderList(list);
     document.querySelector('#reportBug').addEventListener('click', (e) => {
       document.getElementById("addTicketForm").style.display = "block";
       document.querySelector('#addBugButton').addEventListener('click', (e) => {
@@ -25,17 +25,24 @@ export default class TicketList {
   }
 
   prepareTemplate(template, projects) {
-    template.querySelector('a').href +=  projects.id;
-    template.querySelector('.projectName').textContent += projects.name;
+    template.querySelector('.cardTitle').innerHTML +=  projects.title;
+    template.querySelector('.summary').innerHTML +=  projects.description;
     return template;
   }
 
   renderList(list) {
     // make sure the list is empty
     this.listElement.innerHTML = '';
+    let projectTickets = [];
+    for(let i = 0; i < Object.keys(list).length; i++){
+      if(list[i].projectId = this.project){
+        projectTickets.push(list[i])
+      }
+    }
+    console.log(projectTickets);
     //get the template
     const template = document.getElementById('bugTicket');
-    renderListWithTemplate(template, this.listElement, list, this.prepareTemplate);
+    renderListWithTemplate(template, this.listElement, projectTickets, this.prepareTemplate);
   }
     
 }
