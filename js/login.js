@@ -1,15 +1,20 @@
 import ExternalServices from './externalServices.js';
+import {setLocalStorage} from './templates.js'
 
 export default class Login{
   constructor() {
       this.token = null;
+      this.id = null;
       this.services = new ExternalServices();
     }
 
   async login(creds) {
     try {
-      this.token = await this.services.loginRequest(creds);
-      console.log(this.token);
+      const temp = await this.services.loginRequest(creds);
+      console.log(temp);
+      setLocalStorage("token", temp.token);
+      setLocalStorage("userId", temp.userId);
+      window.location.href = "../index.html"
     } 
     catch(err) {
       console.log(err);

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bug Finder | Home</title>
     <link rel="stylesheet" href="./style.css"/>
-    <script src="js/main.js" type="module"></script>
+    <script src="js/projectPage.js" type="module"></script>
     <template id="bugTicket">
       <div class="bugCard">
         <h3>Bug: </h3>
@@ -21,8 +21,21 @@
     <main class="divider">
       <div class="projectDesc">
       </div>
-      <div class="commentList">
+      <div class="ticketHeader">
         <h2>Bugs Found</h2>
+        <button id="reportBug">Report Bug</button>
+        <form id="addTicketForm">
+          <p>
+            <label for="createTitle">Title</label>
+            <input type="text" id="createTitle"/>
+          </p>
+          <p>
+            <textarea placeholder="Descibe the bug here" id="createDescription" rows="5" cols="50"></textarea>
+          </p>
+          <button type="button" id="addBugButton">Add Bug</button>
+        </form>
+      </div>
+      <div class="commentList">
       </div>
     </main>
   <footer id="main-footer"></footer>

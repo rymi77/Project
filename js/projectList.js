@@ -12,8 +12,9 @@ export default class ProjectList {
   }
   
   prepareTemplate(template, projects) {
-    
-    template.querySelector('a').href +=  projects.id;
+    console.log(projects._id)
+    console.log(projects.name)
+    template.querySelector('a').href +=  projects._id;
     template.querySelector('.projectName').textContent += projects.name;
     return template;
   }

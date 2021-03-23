@@ -165,6 +165,21 @@ h2{
     height: 30px;
 }
 
+.ticketHeader{
+    text-align: center;
+}
+
+#addTicketForm{
+    display: none;
+    border-radius: 20px;
+    border-style: solid;
+    border-color: black;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    padding-bottom: 10px;
+    margin-top: 10px;
+}
+
 /* half screen */
 p{
     font-size: 1.5vw;

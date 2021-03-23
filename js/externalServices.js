@@ -1,3 +1,5 @@
+import {getLocalStorage} from "./templates.js";
+
 const baseURL = 'https://nodefinalproject.herokuapp.com/'
 
 async function convertToJson(res) {
@@ -17,6 +19,26 @@ class ExteralServices{
     return fetch(baseURL + 'projects',{
       method: 'GET'
     }).then(convertToJson).then((data) => data.projects);
+  }
+
+  async addTicket(ticket) {
+    return fetch(baseURL + 'postTicket',{
+      method: 'Post',
+      headers: {
+        Authorization: 'Bearer ' + getLocalStorage("token"),
+        'Content-Type': 'application/json'
+     },
+     body: JSON.stringify(ticket)
+    }).then(convertToJson);
+  }
+
+  async getTickets() {
+    return fetch(baseURL + 'getUserTickets',{
+      method: 'GET',
+      headers: {
+        Authorization: 'Bearer ' + getLocalStorage("token")
+     }
+    }).then(convertToJson);
   }
 
   async loginRequest(user){
