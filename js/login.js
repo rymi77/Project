@@ -42,12 +42,13 @@ export default class Login{
     });
   }
   showCreate(){
-    document.querySelector('#createButton').addEventListener('click', (e) => {
+    document.querySelector('#createButton').addEventListener('click', async (e) => {
       const email = document.querySelector('#email-create').value;
       const username = document.querySelector('#username-create').value;
       const password = document.querySelector('#password-create').value;
       const confirmPassword = document.querySelector('#re-password').value;
-      this.create({email, username, password, confirmPassword});
+      await this.create({email, username, password, confirmPassword});
+      window.location.href = "signin.html";
     });
   }
 }

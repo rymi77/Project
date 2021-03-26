@@ -32,7 +32,25 @@ class ExteralServices{
     }).then(convertToJson);
   }
 
-  async getTickets() {
+  async deleteTicket(postId) {
+    fetch(baseURL + "delete/" + postId,{
+      method: 'Delete',
+      headers: {
+        Authorization: 'Bearer ' + getLocalStorage("token")
+     }
+    }).then(convertToJson);
+  }
+
+  async getProjectTickets(project) {
+    return fetch(baseURL + 'project/' + project,{
+      method: 'GET',
+      headers: {
+        Authorization: 'Bearer ' + getLocalStorage("token")
+     }
+    }).then(convertToJson);
+  }
+
+  async getUserTickets() {
     return fetch(baseURL + 'getUserTickets',{
       method: 'GET',
       headers: {

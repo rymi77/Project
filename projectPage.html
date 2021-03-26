@@ -9,9 +9,9 @@
     <template id="bugTicket">
       <div class="bugCard">
         <h3 class="cardTitle">Bug: </h3>
-        <p>Status: Unresolved</p>
         <p class="summary">Summary: </p>
-        <input type="button" value="Resolve" class="resolveBtn">
+        <input type="button" value="Edit" class="editBtn" data-id="">
+        <input type="button" value="Delete" class="deleteBtn" data-id="">
       </div>
       <br>
     </template>
@@ -19,7 +19,9 @@
   <body>
     <header id="main-header"></header>
     <main class="divider">
-      <div class="projectDesc">
+      <div class="projectInfo">
+        <h1 id="projectTitle"></h1>
+        <h3 id="projectDesc"></h3>
       </div>
       <div class="ticketHeader">
         <h2>Bugs Found</h2>
