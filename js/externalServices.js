@@ -32,6 +32,17 @@ class ExteralServices{
     }).then(convertToJson);
   }
 
+  async editTicket(postId, ticket) {
+    return fetch(baseURL + 'update/' + postId,{
+      method: 'PUT',
+      headers: {
+        Authorization: 'Bearer ' + getLocalStorage("token"),
+        'Content-Type': 'application/json'
+     },
+     body: JSON.stringify(ticket)
+    }).then(convertToJson);
+  }
+
   async deleteTicket(postId) {
     fetch(baseURL + "delete/" + postId,{
       method: 'Delete',

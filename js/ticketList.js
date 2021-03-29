@@ -18,19 +18,45 @@ export default class TicketList {
     document.querySelector('#reportBug').addEventListener('click', (e) => {
       this.postBug()
     });
-    this.listElement.addEventListener('click', this.editBug.bind(this));
+    this.listElement.addEventListener('click', this.deleteBug.bind(this));
   }
 
-  async editBug(e){
+  async deleteBug(e){
+    const postId = e.target.dataset.id;
     if(e.target.className == "deleteBtn"){
-      const message = await this.dataSource.deleteTicket(e.target.dataset.id);
+      const message = await this.dataSource.deleteTicket(postId);
       alert("Ticket deleted")
       location.reload();
     }
-    else{
-      console.log("edit");
-      console.log(e);
+    else if(e.target.className == "editBtn"){
+      this.editBug(e, postId)
     }
+  }
+  editBug(e, postId){
+    //change card to edit it
+    let card = e.target.parentElement;
+    let titleInput = document.createElement("input");
+    titleInput.value = card.childNodes[1].innerHTML;
+    let descInput = document.createElement("textarea");
+    descInput.value = card.childNodes[3].innerHTML;
+    let changeBtn = document.createElement("button");
+    changeBtn.innerHTML = "Change";
+    changeBtn.id = "changeBtn"
+    card.appendChild(titleInput);
+    card.appendChild(descInput);
+    card.appendChild(changeBtn);
+    card.childNodes[1].style.display = "none";
+    card.childNodes[3].style.display = "none";
+    card.childNodes[5].style.display = "none";
+    card.childNodes[7].style.display = "none";
+    //change data
+    document.querySelector('#changeBtn').addEventListener('click', async(e) => {
+      const title = card.childNodes[9].value;
+      const description = card.childNodes[10].value;
+      const message = await this.dataSource.editTicket(postId, {title, description});
+      alert("Ticket edited")
+      location.reload();
+    });
   }
 
   async postBug(){
@@ -46,8 +72,8 @@ export default class TicketList {
   }
 
   renderDesc(project){
-    document.querySelector("#projectTitle").innerHTML += project.name;
-    document.querySelector("#projectDesc").innerHTML += project.description;
+    document.querySelector("#projectTitle").innerHTML = project.name;
+    document.querySelector("#projectDesc").innerHTML = project.description;
   }
 
   prepareTemplate(template, projects) {
