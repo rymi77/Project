@@ -61,13 +61,14 @@ class ExteralServices{
     }).then(convertToJson);
   }
 
-  async getUserTickets() {
-    return fetch(baseURL + 'getUserTickets',{
+  async getProfile() {
+    const user = getLocalStorage("user");
+    return fetch(baseURL + 'profile/' + user,{
       method: 'GET',
       headers: {
         Authorization: 'Bearer ' + getLocalStorage("token")
      }
-    }).then(convertToJson).then((data) => data.tickets);
+    }).then(convertToJson);
   }
 
   async loginRequest(user){

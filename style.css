@@ -1,6 +1,19 @@
+/* small screen */
 body{
     background-color: gray;
     margin: 0%;
+}
+p{
+    font-size: 1em;
+}
+h1{
+    font-size: 1.75em;
+}
+h2{
+    font-size: 1.5em;
+}
+h3{
+    font-size: 1.25em;
 }
 
 /* The heading banner */
@@ -22,12 +35,14 @@ body{
 
 /* Dropdown Button */
 .dropBtn {
+    width: 3.5em;
+    height: 1.75em;
     margin-top: 2vw;
     margin-left: 2vw;
     background-color: gray;
     color: white;
-    padding: 16px;
-    font-size: 16px;
+    padding: 1vw;
+    font-size: 1em;
     border: none;
 }
 
@@ -75,8 +90,8 @@ body{
 
 /* login container */
 .container{
-    margin-top: 20vw;
-    max-width: 30%;
+    margin-top: 10vw;
+    max-width: 60%;
     margin-left: auto;
     margin-right: auto;
     background: white;
@@ -181,10 +196,17 @@ h2{
     border-radius: 20px;
     border-style: solid;
     border-color: black;
-    margin-left: 10vw;
-    margin-right: 10vw;
-    padding-bottom: 10px;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    padding-bottom: 5px;
     margin-top: 10px;
+    margin-bottom: 10px;
+}
+#addTicketForm input{
+    width: 50%;
+}
+#addTicketForm textarea{
+    width: 95%;
 }
 
 .projectInfo{
@@ -194,7 +216,76 @@ h2{
     border-color: black;
 }
 
-/* small screen */
-p{
-    font-size: 3vw;
+
+
+/* medium screen */
+@media screen and (min-width: 600px) {
+    p{
+        font-size: 1.25em;
+    }
+    h1{
+        font-size: 2em;
+    }
+    h2{
+        font-size: 1.75em;
+    }
+    h3{
+        font-size: 1.5em;
+    }
+    .container{
+        max-width: 45%;
+    }
+    .dropBtn {
+        width: 3.5em;
+        height: 2em;
+        font-size: 1.5em;
+    }
+    .deleteBtn{
+        width: 100px;
+        height: 27px;
+    }
+    .editBtn{
+        width: 100px;
+        height: 27px; 
+    }
+    button{
+        width: 100px;
+        height: 27px;   
+    }
+}
+
+/* large screen */
+@media screen and (min-width: 1200px) {
+    p{
+        font-size: 1.5em;
+    }
+    h2{
+        font-size: 2em;
+    }
+    h3{
+        font-size: 1.75em;
+    }
+    .container{
+        max-width: 30%;
+    }
+    .dropBtn {
+        width: 4em;
+        height: 2.5em;
+        font-size: 1.5em;
+    }
+    #addTicketForm textarea{
+        width: 90%;
+    }
+    .deleteBtn{
+        width: 125px;
+        height: 30px;
+    }
+    .editBtn{
+        width: 125px;
+        height: 30px; 
+    }
+    button{
+        width: 125px;
+        height: 30px;   
+    }
 }

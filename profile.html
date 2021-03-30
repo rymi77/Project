@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bug Finder | Home</title>
     <link rel="stylesheet" href="./style.css"/>
-    <script src="js/main.js" type="module"></script>
-    <template id="bugTicket">
+    <script src="js/profile.js" type="module"></script>
+    <template id="userTicket">
       <div class="bugCard">
-        <h3>Bug: </h3>
-        <h4>Status: Unresolved</h4>
-        <p>Summary: </p>
-        <input type="button" value="Resolve" class="resolveBtn">
+        <h3 class="cardTitle"></h3>
+        <p class="summary"></p>
+        <input type="button" value="Edit" class="editBtn" data-id="">
+        <input type="button" value="Delete" class="deleteBtn" data-id="">
       </div>
       <br>
     </template>
@@ -19,6 +19,9 @@
   <body>
     <header id="main-header"></header>
     <main class="divider">
+      <h1>Profile</h1>
+      <h3 id="usernameDisplay">Username: </h3>
+      <h3 id="emailDisplay">Email: </h3>
       <h2>My Tickets</h2>
       <div class="commentList">
       </div>
