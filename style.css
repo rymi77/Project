@@ -26,6 +26,10 @@ h3{
     background-attachment: fixed;
     background-size: 100% 100%;
     margin-bottom: 0vw;
+    
+    /* to keep banner's aspect ratio from getting distorted when resizing window */
+    background-position: center center;
+    background-size: cover;
 }
 
 .title{
@@ -215,8 +219,6 @@ h2{
     border-style: solid;
     border-color: black;
 }
-
-
 
 /* medium screen */
 @media screen and (min-width: 600px) {
