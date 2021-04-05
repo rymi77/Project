@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bug Finder | Home</title>
     <link rel="stylesheet" href="./style.css"/>
-    <script src="js/main.js" type="module"></script>
+    <script src="js/main.js" type="module" defer></script>
     <template id="projectCardTemplate">
       <a href="/projectPage.html?project=" class="projectLink">
         <div class="projectCard">
@@ -18,7 +18,7 @@
   <body>
     <header id="main-header"></header>
     <main class="divider">
-      <di class="desc">
+      <div class="desc">
         <h2>Welcome to Bug Finder!</h2>
         <p>This site is to aid in the continuing development of several projects. 
           The community is invited to post about any bugs they find when using such 
@@ -27,6 +27,20 @@
       </div>
       <div class="projects">
         <h2>Community Projects</h2>
+        <div style="font-size:1.5em">
+           <button id="addProject" style="background-color:#09b464;">Add New Project</button>
+        </div>
+        <form id="addProjectForm">
+
+          <br>
+          <input type="text" id="addProjectTitle" placeholder="Project Title"/>
+          <br>
+          <br>
+          
+          <textarea placeholder="Describe the project here" id="addProjectDescription" rows="5" cols="50"></textarea>
+          <br>
+          <button type="button" id="addProjectButton">Submit</button>
+        </form>
         <ul class="projectList">
         </ul>
       </div>

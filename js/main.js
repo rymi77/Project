@@ -8,3 +8,4 @@ const dataSource = new ExternalServices();
 const listElements = document.querySelector(".projectList");
 const projectList = new ProjectList(listElements, dataSource);
 projectList.init();
+projectList.addProject();

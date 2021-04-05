@@ -3,6 +3,41 @@ body{
     margin: 0%;
 }
 
+.label-font {
+    font-size: 30px;
+}
+
+/* add new project button style */
+#addProject{
+    display:inline-block;
+    padding:0.46em 1.6em;
+    border:0.1em solid #000000;
+    margin:0 0.2em 0.2em 0;
+    border-radius:0.5em;
+    box-sizing: border-box;
+    box-shadow: 3px 3px 1.5px #aaaaaa;
+    text-decoration:none;
+    font-family: 'Roboto',sans-serif;
+    font-weight: 300;
+    color: black;
+    text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
+    background-color:#FFFFFF;
+    text-align:center;
+    transition: all 0.15s;
+    }
+#addProject:hover{
+    text-shadow: 0 0 2em rgba(255,255,255,1);
+    color:#FFFFFF;
+    border-color:#FFFFFF;
+    }
+    /*
+    @media all and (max-width:30em){
+     a.button5{
+    display:block;
+    margin:0.4em auto;
+    }
+    }*/
+
 /* The heading banner */
 .banner {
     display: grid;
@@ -178,6 +213,10 @@ h2{
 
 .ticketHeader{
     text-align: center;
+}
+
+#addProjectForm{
+    display: none;
 }
 
 #addTicketForm{

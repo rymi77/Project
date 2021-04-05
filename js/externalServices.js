@@ -11,14 +11,25 @@ async function convertToJson(res) {
   }
 }
 
-class ExteralServices{
+class ExternalServices{
   constructor() {
   }
-  
+
   async getProjects() {
     return fetch(baseURL + 'projects',{
       method: 'GET'
     }).then(convertToJson).then((data) => data.projects);
+  }
+
+  async addProject(project) {
+    return fetch(baseURL + 'submitProjectTicket',{
+      method: 'Post',
+      headers: {
+        Authorization: 'Bearer ' + getLocalStorage("token"),
+        'Content-Type': 'application/json'
+     },
+     body: JSON.stringify(project)
+    }).then(convertToJson);
   }
 
   async addTicket(ticket) {
@@ -92,4 +103,4 @@ class ExteralServices{
     return response;
   }
 }
-export default ExteralServices;
+export default ExternalServices;
