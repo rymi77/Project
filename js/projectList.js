@@ -23,7 +23,7 @@ export default class ProjectList {
     document.querySelector('#addProjectButton').addEventListener('click', async(e) => {
       const name = document.querySelector('#addProjectTitle').value;
       const description = document.querySelector('#addProjectDescription').value;
-      const reponse = await this.addProject({name, description});
+      const reponse = await this.dataSource.addProject({name, description});
       location.reload();
     });
   }
