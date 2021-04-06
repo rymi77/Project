@@ -15,7 +15,7 @@ body{
     margin:0 0.2em 0.2em 0;
     border-radius:0.5em;
     box-sizing: border-box;
-    box-shadow: 3px 3px 1.5px #aaaaaa;
+    box-shadow: 0px 3px 3px #aaaaaa;
     text-decoration:none;
     font-family: 'Roboto',sans-serif;
     font-weight: 300;
@@ -167,7 +167,27 @@ body{
     padding-bottom: 7px;
 }
 
-#flexbox {
+#flexbox-projectPage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 30px;
+    row-gap: 30px;
+    margin-left: 30px;
+    margin-right: 60px;
+    flex-direction: column;
+    max-width: 100%;
+}
+#flexbox-projectPage > div {
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.225), 0 6px 20px 0 rgba(0, 0, 0, 0.225);
+    padding: 20px;
+    width: 1000px;
+    max-width: 100%;
+}
+
+#flexbox-index {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -177,26 +197,24 @@ body{
     margin-right: 60px;
     flex-direction: row;
 }
-#flexbox > div {
+#flexbox-index > div {
     background-color: white;
     border-radius: 20px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.225), 0 6px 20px 0 rgba(0, 0, 0, 0.225);
     padding: 20px;
 }
-#flex-col-left {
-    /*flex: 20%;*/
+#flex-index-col-left {
     width: 400px;
-    max-width: 100%, fit-content;
+    max-width: 100%;
     align-self: flex-start;
 }
-#flex-col-right {
-    /*flex: 40%;*/
+#flex-index-col-right {
     width: 1000px;
     max-width: 100%;
     align-self: flex-start;
 }
 @media (max-width: 1100px) {
-    #flexbox {
+    #flexbox-index {
         flex-direction: column;
     }
 }
@@ -305,5 +323,10 @@ h2{
 
 /* small screen */
 p{
-    font-size: 3vw;
+    font-size: 20px;
+}
+@media (max-width: 800px) {
+    p {
+        font-size: 3vw;
+    }
 }

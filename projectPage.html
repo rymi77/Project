@@ -19,26 +19,29 @@
   <body>
     <header id="main-header"></header>
     <main class="divider">
-      <div class="projectInfo">
-        <h1 id="projectTitle"></h1>
-        <h3 id="projectDesc"></h3>
-      </div>
-      <div class="ticketHeader">
-        <h2>Bugs Found</h2>
-        <button id="reportBug">Report Bug</button>
-        <form id="addTicketForm">
-          <p>
+      <div id="flexbox-projectPage">
+        <div class="projectInfo">
+          <h1 id="projectTitle"></h1>
+          <h3 id="projectDesc"></h3>
+        </div>
+        <div class="ticketHeader">
+          <h2>Bugs Found</h2>
+          <button id="reportBug">Report Bug</button>
+          <form id="addTicketForm">
+            <p>
             <label for="createTitle">Title</label>
-            <input type="text" id="createTitle"/>
-          </p>
-          <p>
-            <textarea placeholder="Describe the bug here" id="createDescription" rows="5" cols="50"></textarea>
-          </p>
-          <button type="button" id="addBugButton">Add Bug</button>
-        </form>
-      </div>
-      <div class="commentList">
-      </div>
+            <br>
+            <input type="text" id="createTitle" placeholder="Name of bug"/>
+            </p>
+            <p>
+              <textarea placeholder="Describe the bug here" id="createDescription" rows="5" cols="50"></textarea>
+            </p>
+            <button type="button" id="addBugButton">Add Bug</button>
+          </form>
+        </div>
+        <div class="commentList">
+        </div>
+      </div>  
     </main>
   <footer id="main-footer"></footer>
   </body>
