@@ -81,6 +81,16 @@ class ExternalServices{
     }).then(convertToJson).then((data) => data.tickets);
   }
 
+  async getProfile() {
+    const user = getLocalStorage("user");
+    return fetch(baseURL + 'profile/' + user,{
+      method: 'GET',
+      headers: {
+        Authorization: 'Bearer ' + getLocalStorage("token")
+     }
+    }).then(convertToJson);
+  }
+
   async loginRequest(user){
     const response = await fetch(baseURL + 'login', {
       method: 'POST',
